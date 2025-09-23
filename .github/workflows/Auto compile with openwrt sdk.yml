@@ -3,6 +3,8 @@
 # Description: Auto compile
 #
 name: "Auto compile with openwrt sdk"
+permissions:
+  contents: write
 on:
   repository_dispatch:
   workflow_dispatch:
