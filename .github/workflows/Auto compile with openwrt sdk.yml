@@ -3,6 +3,8 @@
 # Description: Auto compile
 #
 name: "Auto compile with openwrt sdk"
+permissions:
+  contents: read
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -21,6 +23,8 @@ jobs:
   job_check:
     name: Check Version
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       passwall2_version: ${{ steps.check_version.outputs.latest_version }}
       has_update: ${{ steps.check_version.outputs.has_update }}
@@ -71,6 +75,8 @@ jobs:
 
   job_build_passwall2:
     name: Build passwall2 [Luci ${{ matrix.luci_ver }}]
+    permissions:
+      contents: write
     needs: job_check
     if: needs.job_check.outputs.has_update == 'true'
     runs-on: ubuntu-latest
@@ -185,6 +191,8 @@ jobs:
 
   job_auto_compile:
     if: ${{ needs.job_check.outputs.has_update == 'true' && needs.job_check.outputs.prerelease == 'false' }}
+    permissions:
+      contents: write
     needs: job_check
     runs-on: ubuntu-latest
     name: build (${{ matrix.platform }})
