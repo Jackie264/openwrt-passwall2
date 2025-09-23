@@ -78,9 +78,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - sdk_ver: "21.02"
-            luci_ver: "19.07"
-            sdk_url: https://downloads.openwrt.org/releases/21.02.7/targets/x86/64/openwrt-sdk-21.02.7-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+          # - sdk_ver: "21.02"
+          #   luci_ver: "19.07"
+          #   sdk_url: https://downloads.openwrt.org/releases/21.02.7/targets/x86/64/openwrt-sdk-21.02.7-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
           - sdk_ver: "24.10"
             luci_ver: "24.10"
@@ -238,30 +238,6 @@ jobs:
 
           - platform: arm_cortex-a15_neon-vfpv4
             url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/ipq806x/generic/openwrt-sdk-24.10.0-ipq806x-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
-            sdk_ver: "24.10"
-
-          - platform: mips_24kc
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/ath79/generic/openwrt-sdk-24.10.0-ath79-generic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-            sdk_ver: "24.10"
-
-          - platform: mips_4kec
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/realtek/rtl838x/openwrt-sdk-24.10.0-realtek-rtl838x_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-            sdk_ver: "24.10"
-
-          - platform: mips_mips32
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/bcm53xx/generic/openwrt-sdk-24.10.0-bcm53xx-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
-            sdk_ver: "24.10"
-
-          - platform: mipsel_24kc
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/ramips/rt288x/openwrt-sdk-24.10.0-ramips-rt288x_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-            sdk_ver: "24.10"
-
-          - platform: mipsel_74kc
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/ramips/rt3883/openwrt-sdk-24.10.0-ramips-rt3883_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-            sdk_ver: "24.10"
-
-          - platform: mipsel_mips32
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/bcm47xx/generic/openwrt-sdk-24.10.0-bcm47xx-generic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
     steps:
