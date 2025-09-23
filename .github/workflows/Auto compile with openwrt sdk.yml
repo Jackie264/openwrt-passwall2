@@ -122,7 +122,7 @@ jobs:
 
           cat > feeds.conf.default << EOF
           src-git passwall_packages https://github.com/${{ env.packages }}.git;main
-          src-git passwall2 https://github.com/${{ env.passwall2 }}.git;${{ github.ref_name }}
+          src-git passwall2 https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.passwall2 }}.git;${{ github.ref_name }}
           src-git base https://github.com/openwrt/openwrt.git;openwrt-${{ matrix.sdk_ver }}
           src-git packages https://github.com/openwrt/packages.git;openwrt-${{ matrix.sdk_ver }}
           src-git luci https://github.com/openwrt/luci.git;openwrt-${{ matrix.luci_ver }}
