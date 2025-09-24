@@ -6,6 +6,9 @@ name: "Auto compile with openwrt sdk"
 permissions:
   contents: read
 on:
+  push:
+    paths:
+      - 'luci-app-passwall2/Makefile'
   repository_dispatch:
   workflow_dispatch:
     inputs:
