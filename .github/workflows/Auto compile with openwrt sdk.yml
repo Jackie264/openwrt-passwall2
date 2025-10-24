@@ -178,8 +178,7 @@ jobs:
           tag_name: ${{needs.job_check.outputs.passwall2_version}}
           files: ${{ env.FIRMWARE }}/passwall2/*.ipk
 
-
-  job_auto_compile:
+  job_package_compile:
     if: ${{ needs.job_check.outputs.has_update == 'true' && needs.job_check.outputs.prerelease == 'false' }}
     needs: job_check
     runs-on: ubuntu-latest
