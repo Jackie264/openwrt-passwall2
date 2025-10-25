@@ -128,7 +128,6 @@ jobs:
           cd sdk
 
           cat > feeds.conf.default << EOF
-          src-git passwall_packages https://github.com/${{ env.packages }}.git;main
           src-git passwall2 https://github.com/${{ env.passwall2 }}.git;${{ github.ref_name }}
           src-git base https://github.com/openwrt/openwrt.git;openwrt-${{ env.SDK_VER }}
           src-git packages https://github.com/openwrt/packages.git;openwrt-${{ env.SDK_VER }}
@@ -212,5 +211,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add luci/
-          git commit -m "Update to - v${{ steps.version.outputs.version }}" || echo "No changes"
+          git commit -m "Update to - v${{ needs.job_check.outputs.passwall2_version }}" || echo "No changes"
           git push
