@@ -75,7 +75,7 @@ jobs:
 
 
   job_build_passwall2:
-    name: Build passwall2 [Luci ${{ env.LUCI_VER }}]
+    name: Build luci-app-passwall2
     needs: job_check
     if: needs.job_check.outputs.has_update == 'true'
     runs-on: ubuntu-latest
