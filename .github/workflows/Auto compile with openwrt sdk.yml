@@ -116,7 +116,7 @@ jobs:
         run: |
           wget ${{ env.SDK_URL }}
           file_name=$(echo ${{ env.SDK_URL }} | awk -F/ '{print $NF}')
-          mkdir sdk
+          mkdir -p sdk
           if [[ $file_name == *.tar.xz ]]; then
             tar -xJf $file_name -C ./sdk --strip-components=1
           elif [[ $file_name == *.tar.zst ]]; then
