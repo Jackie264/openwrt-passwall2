@@ -6,13 +6,15 @@ name: "Auto compile with openwrt sdk"
 permissions:
   contents: write
 on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'Makefile'
+      - '!**/.github/**'
   repository_dispatch:
   workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+
 env:
   TZ: Asia/Shanghai
   passwall2: ${{ github.repository }}
